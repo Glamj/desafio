@@ -1,12 +1,16 @@
 /* ==========================================================================
     1. LAYOUT PRINCIPAL E NAVEGAÇÃO
    ========================================================================== */
-
+body{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
 header {
     display: flex;
     flex-direction: column;
     height: 23vh;
-    width: 100vw;
+    width: 100%;
 }
 
 .header-Top {
@@ -44,6 +48,7 @@ a {
 /* ==========================================================================
     2. LOGO E MÍDIA
    ========================================================================== */
+
 .logo {
     height: 100%;
     width: 10%;
@@ -56,6 +61,7 @@ img {
 /* ==========================================================================
     3. BARRA DE PESQUISA
    ========================================================================== */
+
 .input-Search {
     display: flex;
     align-items: center;
@@ -84,13 +90,18 @@ img {
     justify-content: end;
 }
 
-.icon:hover, .icon:active{
-    color: #d71515;
+.icon:hover, 
+.icon i:hover, 
+.icon:active {
+    color: var(--corSecundaria);
+    font-size: 1.1em;
+    transition: 0.2s;
 }
 
 /* ==========================================================================
     4. DROPDOWN (MENU SUSPENSO)
    ========================================================================== */
+
 .dropDown {
     background: var(--corPrincipal);
 }
@@ -129,8 +140,9 @@ img {
 /* ==========================================================================
     5. BOTÕES
    ========================================================================== */
+
 .btn-default {
-    background: #e70707;
+    background: var(--corSecundaria);
     border-radius: 10px;
 }
 
@@ -139,32 +151,76 @@ img {
     transition: 0.3s;
 }
 
-.header-Top-end{
+.header-Top-end {
     width: 35%;
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
 
-.login-btn{
+.login-btn {
     color: #fff;
     width: 45%;
 }
 
-.login-btn p a{
+.login-btn p a {
     text-decoration: underline 1px solid #fff;
     font-weight: bold;
 }
 
-.box{
+.box {
     width: 50%;
     display: flex;
     flex-direction: row;
     gap: 15%;
 }
 
-.box .icon{
+.box .icon {
     font-size: 1.5em;
     font-weight: bold;
     color: #fff;
+}
+
+main{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carosel{
+    border: 3px solid red;
+    width: 85%;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.carosel::-webkit-scrollbar{
+    display: none;
+}
+
+.card{
+    text-align: center;
+    font-size: 12px;
+    height: 150px;
+    width: 250px;
+}
+
+.card h2{
+    padding:5px;
+}
+
+.group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5em;
+}
+
+.card img{
+    background: var(--corSecundaria) ;
+    border-radius: 50%;
+    padding: 5px;
+    height: 155px;
+    width: 155px;
 }
