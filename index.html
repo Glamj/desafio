@@ -6,8 +6,8 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
-    <link rel="stylesheet" href="/style/var.css">
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="style/var.css">
+    <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="reset.css">
     <title></title>
 </head>
@@ -15,7 +15,7 @@
     <header>
 
         <div class="header-Top">
-            <div class="logo"><img src="/src/Logo Vyron.png" alt=""></div>
+            <div class="logo"><img src="src/Logo Vyron.png" alt=""></div>
             <div class="input-Search">
                 <input type="search" id="searchInput" placeholder="Busque na Vyron">
                 <div class="icon">
@@ -26,8 +26,8 @@
             <div class="header-Top-end">
                 <div class="login-btn">
                     <p>
-                        <a href="#">Entre</a> ou <br>
-                        <a href="#">cadastre-se</a>
+                        <button class='btn-clear btn-link' onclick="showCreateUserAccount('login')">Entre</button> ou <br>
+                        <button class='btn-clear btn-link' onclick="showCreateUserAccount('register')">cadastre-se</button>
                     </p>
                 </div>
                 <div class="box">
@@ -72,43 +72,43 @@
         <div class="carosel">
             <div class="group">
                 <div class="card">
-                    <img src="/src/iconsCategorias/PC.png" alt="">
+                    <img src="src/iconsCategorias/PC.png" alt="">
                     <h2>Computadores</h2>
                 </div>
                 <div class="card">
-                    <img src="/src/iconsCategorias/Teclado.png" alt="">
+                    <img src="src/iconsCategorias/Teclado.png" alt="">
                     <h2>Teclado</h2>
                 </div>
                 <div class="card">
-                    <img src="/src/iconsCategorias/Mouse.png" alt="">
+                    <img src="src/iconsCategorias/Mouse.png" alt="">
                     <h2>Mouse</h2>
                 </div>
                 <div class="card">
-                    <img src="/src/iconsCategorias/Notebook.png" alt="">
+                    <img src="src/iconsCategorias/Notebook.png" alt="">
                     <h2>Notebook</h2>
                 </div>
                 <div class="card">
-                    <img src="/src/iconsCategorias/imgconsole.png" alt="">
+                    <img src="src/iconsCategorias/imgconsole.png" alt="">
                     <h2>Console</h2>
                 </div>
                 <div class="card">
-                    <img src="/src/iconsCategorias/Controle.png" alt="">
+                    <img src="src/iconsCategorias/Controle.png" alt="">
                     <h2>Controle</h2>
                 </div>
                 <div class="card">
-                    <img src="/src/iconsCategorias/Celular.png" alt="">
+                    <img src="src/iconsCategorias/Celular.png" alt="">
                     <h2>Celular</h2>
                 </div>
                 <div class="card">
-                    <img src="/src/iconsCategorias/imgplacadevideo2.png" alt="">
+                    <img src="src/iconsCategorias/imgplacadevideo2.png" alt="">
                     <h2>placa de vídeo</h2>
                 </div>
                 <div class="card">
-                    <img src="/src/iconsCategorias/Processador.png" alt="">
+                    <img src="src/iconsCategorias/Processador.png" alt="">
                     <h2>Processador</h2>
                 </div>
                 <div class="card">
-                    <img src="/src/iconsCategorias/MemoriaRam.png" alt="">
+                    <img src="src/iconsCategorias/MemoriaRam.png" alt="">
                     <h2>Memória Ram</h2>
                 </div>
             </div>
@@ -120,6 +120,53 @@
 
             
         </section>
+        
+        <div id="overlayAccount" class="overlay invisible">
+        
+            <div class="overlayHeader">
+                <h2>Acesse sua conta ou cadastre-se</h2>
+                <button class="btn-clear overlayExit" style="--btn-color: black;" onclick="hideCreateUserAccount()">X</button>
+            </div>
+
+            <form class="form-login" id="form-login">
+
+                <div class="form-field">
+                    <div><p>Email:</p></div>
+                    <input type="email" name="Email" placeholder="Email" id="email">
+                </div>
+                
+                <div class="form-field">
+                    <div><p>Senha:</p></div>
+                    <input type="password" name="Password" placeholder="Senha" id="password">
+                </div>
+                
+                <input type="button" class="btn-solid" value="Cadastrar">
+                <input type="button" class="btn-outline" value="Login" onclick="goToRegister()">
+            </form>
+
+            <form action="" id="form-register" class="form-register invisible">
+
+                <div class="form-field">
+                    <div><p>Email:</p></div>
+                    <input type="email" name="Email" placeholder="Email" id="email">
+                </div>
+                
+                <div class="form-field">
+                    <div><p>Senha:</p></div>
+                    <input type="password" name="Password" placeholder="Senha" id="password">
+                </div>
+
+                <div class="form-field">
+                    <div><p>Confirmar Senha:</p></div>
+                    <input type="password" name="ConfirmPassword" placeholder="Confirmar Senha" id="password">
+                </div>
+
+                <input type="button" class="btn-solid" value="Login">
+                <input type="button" class="btn-outline" value="Cadastrar" onclick="goToLogin()">
+            </form>
+         </div>
+        <script src="script.js"></script>
+
     </main>
 </body>
 </html>
