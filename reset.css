@@ -7,6 +7,22 @@
     text-decoration: none;
 }
 
-body{
-    width: 100vw;
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    padding: 15px 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    object-fit: contain;
 }

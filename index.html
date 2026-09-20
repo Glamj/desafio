@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel="stylesheet" href="/style/var.css">
     <link rel="stylesheet" href="/style/style.css">
     <link rel="stylesheet" href="reset.css">
     <title></title>
 </head>
+
 <body>
     <header>
 
@@ -21,7 +26,7 @@
                 <div class="icon">
                     <i class="fi fi-rr-search"></i>
                 </div>
-                
+
             </div>
             <div class="header-Top-end">
                 <div class="login-btn">
@@ -60,7 +65,7 @@
                 <li>
                     <a class="btn-default" href="">mais vendidos</a>
                 </li>
-                
+
             </ul>
 
         </div>
@@ -69,57 +74,61 @@
 
     <main>
 
-        <div class="carosel">
-            <div class="group">
-                <div class="card">
-                    <img src="/src/iconsCategorias/PC.png" alt="">
-                    <h2>Computadores</h2>
-                </div>
-                <div class="card">
-                    <img src="/src/iconsCategorias/Teclado.png" alt="">
-                    <h2>Teclado</h2>
-                </div>
-                <div class="card">
-                    <img src="/src/iconsCategorias/Mouse.png" alt="">
-                    <h2>Mouse</h2>
-                </div>
-                <div class="card">
-                    <img src="/src/iconsCategorias/Notebook.png" alt="">
-                    <h2>Notebook</h2>
-                </div>
-                <div class="card">
-                    <img src="/src/iconsCategorias/imgconsole.png" alt="">
-                    <h2>Console</h2>
-                </div>
-                <div class="card">
-                    <img src="/src/iconsCategorias/Controle.png" alt="">
-                    <h2>Controle</h2>
-                </div>
-                <div class="card">
-                    <img src="/src/iconsCategorias/Celular.png" alt="">
-                    <h2>Celular</h2>
-                </div>
-                <div class="card">
-                    <img src="/src/iconsCategorias/imgplacadevideo2.png" alt="">
-                    <h2>placa de vídeo</h2>
-                </div>
-                <div class="card">
-                    <img src="/src/iconsCategorias/Processador.png" alt="">
-                    <h2>Processador</h2>
-                </div>
-                <div class="card">
-                    <img src="/src/iconsCategorias/MemoriaRam.png" alt="">
-                    <h2>Memória Ram</h2>
-                </div>
-            </div>
+
+        <div id="banners">
+            <img src="/src/banners/Banner.gif" alt="Banner Principal" id="imgbanner">
         </div>
 
-       <!-- <div id="BannerIMG">
-            <img src="Banner.gif" alt="Banner Principal" id="imgbanner">
-        </div>-->
 
-            
+        <section class="container-slider">
+            <button id="previous-button"><i class="fi fi-sr-angle-left"></i></button>
+
+            <div class="slider-wrapper" id="slider-wrapper">
+                <div class="container-imgs">
+                    <img src="/src/iconsCategorias/favoritos.png" alt="Controle">
+                    <h2>favoritos</h2>
+                </div>
+                <div class="container-imgs">
+                    <img src="/src/iconsCategorias/celular.png" alt="Celular">
+                    <h2>celular</h2>
+                </div>
+                <div class="container-imgs">
+                    <img src="/src/iconsCategorias/computador.png" alt="Computador">
+                    <h2>computador</h2>
+                </div>
+                <div class="container-imgs">
+                    <img src="/src/iconsCategorias/controle.png" alt="Controle">
+                    <h2>controle</h2>
+                </div>
+                <div class="container-imgs">
+                    <img src="/src/iconsCategorias/jogos.png" alt="Controle">
+                    <h2>jogos</h2>
+                </div>
+                <div class="container-imgs">
+                    <img src="/src/iconsCategorias/mouse.png" alt="Controle">
+                    <h2>mouse</h2>
+                </div>
+                <div class="container-imgs">
+                    <img src="/src/iconsCategorias/notebook.png" alt="Controle">
+                    <h2>notebook</h2>
+                </div>
+                <div class="container-imgs">
+                    <img src="/src/iconsCategorias/placaDeVideo.png" alt="Controle">
+                    <h2>placa de vídeo</h2>
+                </div>
+                <div class="container-imgs">
+                    <img src="/src/iconsCategorias/processador.png" alt="Controle">
+                    <h2>processador</h2>
+                </div>
+                <div class="container-imgs">
+                    <img src="/src/iconsCategorias/teclado.png" alt="Controle">
+                    <h2>teclado</h2>
+                </div>
+            </div>
+
+            <button id="next-button"><i class="fi fi-sr-angle-right"></i></button>
         </section>
     </main>
+    <script src="/src/funçoes/carrosel.js"></script>
 </body>
 </html>
