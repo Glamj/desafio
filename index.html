@@ -1,40 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet'
-        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
-    <link rel='stylesheet'
-        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
     <link rel="stylesheet" href="/style/var.css">
     <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/loginstyle.css">
     <link rel="stylesheet" href="reset.css">
-    <title></title>
+    <title>Vyron</title>
 </head>
 
 <body>
     <header>
-
         <div class="header-Top">
-            <div class="logo"><img src="/src/Logo Vyron.png" alt=""></div>
+            <div class="logo"><img src="/src/Logo Vyron.png" alt="Logo Vyron"></div>
+
             <div class="input-Search">
                 <input type="search" id="searchInput" placeholder="Busque na Vyron">
                 <div class="icon">
                     <i class="fi fi-rr-search"></i>
                 </div>
-
             </div>
+
             <div class="header-Top-end">
                 <div class="login-btn">
                     <p>
-                        <a href="#">Entre</a> ou <br>
-                        <a href="#">cadastre-se</a>
+                        <button class="btn-clear btn-link" onclick="showCreateUserAccount('login')">Entre</button> ou <br>
+                        <button class="btn-clear btn-link" onclick="showCreateUserAccount('register')">cadastre-se</button>
                     </p>
                 </div>
+
                 <div class="box">
                     <div title="Suporte" class="icon">
                         <i class="fi fi-tr-customer-service"></i>
@@ -57,35 +56,37 @@
                 <li class="dropDown">
                     <a class="dropDown-categorias" href="">Categorias</a>
                     <div class="dropDown-menu">
-                        <a href="">produto 1</a>
-                        <a href="">produto 2</a>
-                        <a href="">produto 3</a>
+                        <a href="">favoritos</a>
+                        <a href="">celulares</a>
+                        <a href="">computados</a>
+                        <a href="">controle</a>
+                        <a href="">jogos</a>
+                        <a href="">memoria RAM</a>
+                        <a href="">mouse</a>
+                        <a href="">notebook</a>
+                        <a href="">placa de video</a>
+                        <a href="">processador</a>
+                        <a href="">teclado</a>
                     </div>
                 </li>
                 <li>
                     <a class="btn-default" href="">mais vendidos</a>
                 </li>
-
             </ul>
-
         </div>
-
     </header>
 
     <main>
-
-
         <div id="banners">
             <img src="/src/banners/Banner.gif" alt="Banner Principal" id="imgbanner">
         </div>
-
 
         <section class="container-slider">
             <button id="previous-button"><i class="fi fi-sr-angle-left"></i></button>
 
             <div class="slider-wrapper" id="slider-wrapper">
                 <div class="container-imgs">
-                    <img src="/src/iconsCategorias/favoritos.png" alt="Controle">
+                    <img src="/src/iconsCategorias/favoritos.png" alt="Favoritos">
                     <h2>favoritos</h2>
                 </div>
                 <div class="container-imgs">
@@ -101,34 +102,79 @@
                     <h2>controle</h2>
                 </div>
                 <div class="container-imgs">
-                    <img src="/src/iconsCategorias/jogos.png" alt="Controle">
+                    <img src="/src/iconsCategorias/jogos.png" alt="Jogos">
                     <h2>jogos</h2>
                 </div>
                 <div class="container-imgs">
-                    <img src="/src/iconsCategorias/mouse.png" alt="Controle">
+                    <img src="/src/iconsCategorias/mouse.png" alt="Mouse">
                     <h2>mouse</h2>
                 </div>
                 <div class="container-imgs">
-                    <img src="/src/iconsCategorias/notebook.png" alt="Controle">
+                    <img src="/src/iconsCategorias/notebook.png" alt="Notebook">
                     <h2>notebook</h2>
                 </div>
                 <div class="container-imgs">
-                    <img src="/src/iconsCategorias/placaDeVideo.png" alt="Controle">
+                    <img src="/src/iconsCategorias/placaDeVideo.png" alt="Placa de Vídeo">
                     <h2>placa de vídeo</h2>
                 </div>
                 <div class="container-imgs">
-                    <img src="/src/iconsCategorias/processador.png" alt="Controle">
+                    <img src="/src/iconsCategorias/processador.png" alt="Processador">
                     <h2>processador</h2>
                 </div>
                 <div class="container-imgs">
-                    <img src="/src/iconsCategorias/teclado.png" alt="Controle">
+                    <img src="/src/iconsCategorias/teclado.png" alt="Teclado">
                     <h2>teclado</h2>
                 </div>
             </div>
 
             <button id="next-button"><i class="fi fi-sr-angle-right"></i></button>
         </section>
+
+        <div id="overlayAccount" class="overlay invisible">
+            <div class="overlayHeader">
+                <h2>Acesse sua conta ou cadastre-se</h2>
+                <button class="btn-clear overlayExit" style="--btn-color: black;" onclick="hideCreateUserAccount()">X</button>
+            </div>
+
+            <form class="form-login" id="form-login">
+                <div class="form-field">
+                    <div><p>Email:</p></div>
+                    <input type="email" name="Email" placeholder="Email" id="email-login">
+                </div>
+                
+                <div class="form-field">
+                    <div><p>Senha:</p></div>
+                    <input type="password" name="Password" placeholder="Senha" id="password-login">
+                </div>
+                
+                <input type="button" class="btn-solid" value="Login">
+                <input type="button" class="btn-outline" value="Cadastrar" onclick="goToRegister()">
+            </form>
+
+            <form action="" id="form-register" class="form-register invisible">
+                <div class="form-field">
+                    <div><p>Email:</p></div>
+                    <input type="email" name="Email" placeholder="Email" id="email-register">
+                </div>
+                
+                <div class="form-field">
+                    <div><p>Senha:</p></div>
+                    <input type="password" name="Password" placeholder="Senha" id="password-register">
+                </div>
+
+                <div class="form-field">
+                    <div><p>Confirmar Senha:</p></div>
+                    <input type="password" name="ConfirmPassword" placeholder="Confirmar Senha" id="confirm-password-register">
+                </div>
+
+                <input type="button" class="btn-solid" value="Cadastrar">
+                <input type="button" class="btn-outline" value="Login" onclick="goToLogin()">
+            </form>
+        </div>
     </main>
+
+    <script src="/src/funçoes/login.js"></script>
     <script src="/src/funçoes/carrosel.js"></script>
 </body>
+
 </html>
