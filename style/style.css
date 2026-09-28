@@ -1,381 +1,466 @@
 /* ==========================================================================
-   0. CONFIGURAÇÕES GLOBAIS
+    0. CONFIGURAÇÕES GLOBAIS
    ========================================================================== */
-body {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-}
-
-a {
-    padding: 15px 10px;
-    color: #fff;
-}
-
-/* ==========================================================================
-   1. HEADER E NAVEGAÇÃO
-   ========================================================================== */
-header {
-    display: flex;
-    flex-direction: column;
-    height: 23vh;
-    width: 100%;
-}
-
-.header-Top {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: var(--corPrincipal);
-    height: 50%;
-    width: 100%;
-    gap: 8%;
-}
-
-.menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--corPrincipal);
-    height: 50%;
-}
-
-.menu ul {
-    display: flex;
-    margin: 5% 8%;
-    list-style: none;
-}
-
-.menu ul li {
-    margin: 0 5px;
-}
-
-.logo {
-    height: 100%;
-    width: 25%;
-}
-
-.logo img {
-    height: 100%;
-}
-
-/* ==========================================================================
-   2. BARRA DE PESQUISA E INPUTS GERAIS
-   ========================================================================== */
-.input-Search {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #fff;
-    width: 45%;
-    border-radius: 8px;
-    padding: 10px 15px;
-}
-
-.input-Search input {
-    border: none;
-    width: 92%;
-    padding: 0;
-    margin-bottom: 0;
-}
-
-.input-Search input:focus {
-    outline: none;
-    border: none;
-}
-
-input {
-    width: -webkit-fill-available;
-    padding: 10px;
-    margin-bottom: 15px;
-}
-
-input[type="button"]:hover {
-    cursor: pointer;
-    opacity: 0.6;
-}
-
-.icon {
-    width: 8%;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: flex-end;
-    cursor: pointer;
-}
-
-.icon:hover,
-.icon i:hover,
-.icon:active {
-    color: var(--corSecundaria);
-    font-size: 1.1em;
-    transition: 0.2s;
-}
-
-/* ==========================================================================
-   3. DROPDOWN (MENU SUSPENSO)
-   ========================================================================== */
-.dropDown {
-    background: var(--corPrincipal);
-    position: relative;
-}
-
-.dropDown-categorias {
-    border: 1px solid #fff;
-    border-radius: 5px;
-}
-
-.dropDown-menu {
-    display: none;
-    position: absolute;
-    background: var(--corPrincipal);
-    width: 125px;
-    margin-top: 15%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    z-index: 10;
-}
-
-.dropDown-menu a {
-    display: block;
-    text-align: start;
-    color: #cecece;
-    padding: 12px 0 10px 25px;
-    transition: 0.3s;
-}
-
-.dropDown-menu a:hover {
-    border: 1px solid #fff;
-    color: #fff;
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.dropDown .dropDown-menu {
-    display: block;
-    /* Mantém o bloco na estrutura, mas invisível */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.dropDown:hover .dropDown-menu {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-}
-
-/* ==========================================================================
-   4. BOTÕES E ÁREA DE LOGIN
-   ========================================================================== */
-.btn-default {
-    background: var(--corSecundaria);
-    border-radius: 10px;
-}
-
-.btn-default:hover {
-    opacity: 0.9;
-    transition: 0.3s;
-}
-
-.btn-clear {
-    border: none;
-    background-color: transparent;
-    color: var(--btn-color, #ffffff);
-}
-
-button:hover {
-    cursor: pointer;
-    opacity: 0.6;
-}
-
-.btn-link {
-    font-weight: bold;
-    text-decoration: underline;
-    display: inline-block;
-}
-
-.btn-solid {
-    border: none;
-    background-color: white;
-}
-
-.btn-outline {
-    border: 1px solid white;
-    background-color: transparent;
-    color: white;
-}
-
-.header-Top-end {
-    width: 35%;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-
-.login-btn {
-    color: #fff;
-    width: 45%;
-}
-
-.login-btn p a {
-    text-decoration: underline 1px solid #fff;
-    font-weight: bold;
-}
-
-.box {
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    gap: 15%;
-}
-
-.box .icon {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #fff;
-}
-
-/* ==========================================================================
-   5. CONTEÚDO PRINCIPAL (MAIN) & BANNERS
-   ========================================================================== */
-main {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    gap: 40px;
-    padding-bottom: 50px;
-}
-
-#banners {
-    margin-top: 2%;
-    width: 85%;
-    max-height: 400px;
-}
-
-#banners img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-/* ==========================================================================
-   6. SLIDER / CARROSSEL DE CATEGORIAS
-   ========================================================================== */
-.container-slider {
-    display: flex;
-    width: 90%;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    position: relative;
-}
-
-.slider-wrapper {
-    display: flex;
-    gap: var(--gapSlider);
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    width: 100%;
-    padding: 10px 0;
-}
-
-.container-imgs {
-    flex: 0 0 calc((100% - (var(--gapSlider) * 4)) / 5);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 175px;
-    border-radius: 12px;
-    padding: 10px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.container-imgs:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.container-imgs img {
-    height: 70px;
-    width: 70px;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
-
-.container-imgs h2 {
-    font-size: 0.95rem;
-    color: #333;
-    text-transform: capitalize;
-}
-
-#previous-button,
-#next-button {
-    font-size: 2em;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    color: #333;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-}
-
-#previous-button:hover,
-#next-button:hover {
-    color: var(--corSecundaria);
-    transition: 0.2s;
-}
-
-/* ==========================================================================
-   7. ESTRUTURA DO OVERLAY E MODAIS (LOGIN/CADASTRO)
-   ========================================================================== */
-.overlay {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    width: 90%;
-    max-width: 600px;
-    padding: 2rem;
-
-    display: flex;
-    flex-direction: column;
-
-    background-color: grey;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-
-    z-index: 1000;
-}
-
-.overlay form {
-    margin-top: 10px;
-}
-
-.overlayHeader {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.overlayHeader button {
-    font-size: 20px;
-}
-
-@media (min-width: 768px) {
-    .overlay {
-        max-width: 600px;
+    body {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
     }
-}
 
-/* ==========================================================================
-   8. UTILITÁRIOS
+    a {
+        padding: 15px 10px;
+        color: #fff;
+    }
+
+    /* ==========================================================================
+    1. HEADER E NAVEGAÇÃO
    ========================================================================== */
-.invisible {
-    display: none;
-}
+    header {
+        display: flex;
+        flex-direction: column;
+        height: 23vh;
+        width: 100%;
+    }
+
+    .header-Top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--corPrincipal);
+        height: 50%;
+        width: 100%;
+        gap: 8%;
+    }
+
+    .header-Top-end {
+        width: 35%;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--corPrincipal);
+        height: 50%;
+    }
+
+    .menu ul {
+        display: flex;
+        margin: 5% 8%;
+        list-style: none;
+    }
+
+    .menu ul li {
+        margin: 0 5px;
+    }
+
+    .logo {
+        height: 100%;
+        width: 30%;
+    }
+
+    .logo img {
+        height: 100%;
+    }
+
+    /* ==========================================================================
+    2. BARRA DE PESQUISA E INPUTS GERAIS
+   ========================================================================== */
+    .input-Search {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #fff;
+        width: 45%;
+        border-radius: 8px;
+        padding: 10px 15px;
+    }
+
+    .input-Search input {
+        border: none;
+        width: 92%;
+        padding: 0;
+        margin-bottom: 0;
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    .input-Search input:focus {
+        outline: none;
+        border: none;
+    }
+
+    input {
+        width: -webkit-fill-available;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    input[type="button"]:hover {
+        cursor: pointer;
+        opacity: 0.6;
+    }
+
+    input {
+        width: -webkit-fill-available;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    input[type="button"]:hover {
+        cursor: pointer;
+        opacity: 0.6;
+    }
+
+    .input-Search .icon{
+        color: #000;
+    }
+
+    .icon {
+        color: #fff;
+        width: 8%;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: flex-end;
+        cursor: pointer;
+    }
+
+    .icon:hover,
+    .icon i:hover,
+    .icon:active {
+        color: #d6d6d6;
+        font-size: 1.05em;
+        transition: 0.15s;
+    }
+
+    .menu-celular{
+        display: none;
+    }
+
+    /* ==========================================================================
+    3. DROPDOWN (MENU SUSPENSO)
+   ========================================================================== */
+    .dropDown {
+        background: var(--corPrincipal);
+        position: relative;
+    }
+
+    .dropDown-categorias {
+        border: 1px solid #fff;
+        border-radius: 5px;
+    }
+
+    .dropDown-menu {
+        display: none;
+        position: absolute;
+        background: var(--corPrincipal);
+        width: 125px;
+        margin-top: 15%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+    }
+
+    .dropDown-menu a {
+        display: block;
+        text-align: start;
+        color: #cecece;
+        padding: 12px 0 10px 25px;
+        transition: 0.3s;
+    }
+
+    .dropDown-menu a:hover {
+        border: 1px solid #fff;
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .dropDown .dropDown-menu {
+        display: block;
+        /* Mantém o bloco na estrutura, mas invisível */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .dropDown:hover .dropDown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* ==========================================================================
+    4. BOTÕES E ÁREA DE LOGIN
+   ========================================================================== */
+    .btn-default {
+        background: var(--corSecundaria);
+        border-radius: 10px;
+    }
+
+    .btn-default:hover {
+        opacity: 0.9;
+        transition: 0.3s;
+    }
+
+    .btn-clear {
+        border: none;
+        background-color: transparent;
+        color: var(--btn-color, #ffffff);
+    }
+
+    button:hover {
+        cursor: pointer;
+        opacity: 0.6;
+    }
+
+    .btn-link {
+        font-weight: bold;
+        text-decoration: underline;
+        display: inline-block;
+    }
+
+    .btn-solid {
+        border: none;
+        background-color: white;
+    }
+
+    .btn-outline {
+        border: 1px solid white;
+        background-color: transparent;
+        color: white;
+    }
+
+    .header-Top-end {
+        width: 35%;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .login-btn {
+        color: #fff;
+        width: 45%;
+    }
+
+    .login-btn p a {
+        text-decoration: underline 1px solid #fff;
+        font-weight: bold;
+    }
+
+    .box {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        gap: 20%;
+    }
+
+    .box .icon {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    /* ==========================================================================
+    5. CONTEÚDO PRINCIPAL (MAIN) & BANNERS
+   ========================================================================== */
+    main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        gap: 40px;
+        padding-bottom: 50px;
+    }
+
+    #banners {
+        margin-top: 2%;
+        width: 90%;
+        max-height: 400px;
+    }
+
+    #banners img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* ==========================================================================
+    6. SLIDER / CARROSSEL DE CATEGORIAS
+   ========================================================================== */
+    .container-slider {
+        display: flex;
+        width: 90%;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        position: relative;
+    }
+
+    .slider-wrapper {
+        display: flex;
+        gap: var(--gapSlider);
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .container-imgs {
+        flex: 0 0 calc((100% - (var(--gapSlider) * 4)) / 5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 175px;
+        aspect-ratio: 1/1;
+        border-radius: 12px;
+        padding: 10px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .container-imgs:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .container-imgs img{
+        height: 100px;
+        width: 100px;
+        margin-bottom: 10px;
+    }
+
+    .container-imgs h2 {
+        font-size: 0.95rem;
+        color: #333;
+        text-transform: capitalize;
+    }
+
+    #previous-button,
+    #next-button {
+        font-size: 2em;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        color: #333;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+    }
+
+    #previous-button:hover,
+    #next-button:hover {
+        color: var(--corSecundaria);
+        transition: 0.2s;
+    }
+
+    /* ==========================================================================
+    7. ESTRUTURA DO OVERLAY E MODAIS (LOGIN/CADASTRO)
+   ========================================================================== */
+    .overlay {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 90%;
+        max-width: 600px;
+        padding: 2rem;
+
+        display: flex;
+        flex-direction: column;
+
+        background-color: grey;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+
+        z-index: 1000;
+    }
+
+    .overlay form {
+        margin-top: 10px;
+    }
+
+    .overlayHeader {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .overlayHeader button {
+        font-size: 20px;
+    }
+
+    @media (min-width: 768px) {
+        .overlay {
+            max-width: 600px;
+        }
+    }
+
+    /* ==========================================================================
+    8. UTILITÁRIOS
+   ========================================================================== */
+    .invisible {
+        display: none;
+    }
+
+    /* ==========================================================================
+    7. ESTRUTURA DO OVERLAY E MODAIS
+   ========================================================================== */
+    .overlay {
+        /* Posicionamento */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        /* Dimensões */
+        width: 90%;
+        max-width: 600px;
+        padding: 2rem;
+
+        /* Layout */
+        display: flex;
+        flex-direction: column;
+
+        /* Estilo Visual */
+        background-color: grey;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+
+        z-index: 1000
+    }
+
+    .overlay form {
+        margin-top: 10px;
+    }
+
+    .overlayHeader {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .overlayHeader button {
+        font-size: 20px;
+    }
+
+    /* Responsividade do Overlay */
+    @media (min-width: 768px) {
+        .overlay {
+            max-width: 600px;
+        }
+    }
+
+    /* ==========================================================================
+    8. UTILITÁRIOS
+   ========================================================================== */
+    .invisible {
+        display: none;
+    }

@@ -1,0 +1,67 @@
+.telaEscura{
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    justify-content: end;
+    z-index: 9999;
+}
+
+.telaEscura.ativo{
+    display: flex;
+}
+
+#nav-celular{
+    height: 100%;
+    width: 65%;
+    background: #191b25;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10%;
+    border-bottom: 2.5px solid #0d0e14;
+}
+
+.header h2, .header i{
+    color: #fff;
+    padding: 10px 25px;
+}
+
+.rolagem-menu{
+    height: 90%;
+    overflow-y: auto;
+}
+
+.menu-categorias{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+}
+
+.menu-categorias h2{
+    font-size: 1.8em;
+    padding: 10px;
+}
+.menu-categorias-item{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 75px;
+    font-size: 1.3em;
+    padding: 0 25px;
+    width: 100%;
+    border-bottom: 2px solid #fff;
+}
+
+.menu-categorias-item:hover{
+    opacity: 0.5;
+}

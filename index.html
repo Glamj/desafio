@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css">
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+    <link rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
     <link rel="stylesheet" href="/style/var.css">
     <link rel="stylesheet" href="/style/style.css">
     <link rel="stylesheet" href="/style/loginstyle.css">
+    <link rel="stylesheet" href="/style/responsavidade.css">
+    <link rel="stylesheet" href="/style/menucelular.css">
     <link rel="stylesheet" href="reset.css">
     <title>Vyron</title>
 </head>
@@ -29,8 +33,10 @@
             <div class="header-Top-end">
                 <div class="login-btn">
                     <p>
-                        <button class="btn-clear btn-link" onclick="showCreateUserAccount('login')">Entre</button> ou <br>
-                        <button class="btn-clear btn-link" onclick="showCreateUserAccount('register')">cadastre-se</button>
+                        <button class="btn-clear btn-link" onclick="showCreateUserAccount('login')">Entre</button> ou
+                        <br>
+                        <button class="btn-clear btn-link"
+                            onclick="showCreateUserAccount('register')">cadastre-se</button>
                     </p>
                 </div>
 
@@ -47,6 +53,11 @@
                     <div title="Carrinho" class="icon">
                         <i class="fi fi-tr-cart-minus"></i>
                     </div>
+                </div>
+            </div>
+            <div class="menu-celular">
+                <div class="icon">
+                    <i id="menu-celular" class="fi fi-tr-menu-burger"></i>
                 </div>
             </div>
         </div>
@@ -133,38 +144,50 @@
         <div id="overlayAccount" class="overlay invisible">
             <div class="overlayHeader">
                 <h2>Acesse sua conta ou cadastre-se</h2>
-                <button class="btn-clear overlayExit" style="--btn-color: black;" onclick="hideCreateUserAccount()">X</button>
+                <button class="btn-clear overlayExit" style="--btn-color: black;"
+                    onclick="hideCreateUserAccount()">X</button>
             </div>
 
             <form class="form-login" id="form-login">
                 <div class="form-field">
-                    <div><p>Email:</p></div>
+                    <div>
+                        <p>Email:</p>
+                    </div>
                     <input type="email" name="Email" placeholder="Email" id="email-login">
                 </div>
-                
+
                 <div class="form-field">
-                    <div><p>Senha:</p></div>
+                    <div>
+                        <p>Senha:</p>
+                    </div>
                     <input type="password" name="Password" placeholder="Senha" id="password-login">
                 </div>
-                
+
                 <input type="button" class="btn-solid" value="Login">
                 <input type="button" class="btn-outline" value="Cadastrar" onclick="goToRegister()">
             </form>
 
             <form action="" id="form-register" class="form-register invisible">
                 <div class="form-field">
-                    <div><p>Email:</p></div>
+                    <div>
+                        <p>Email:</p>
+                    </div>
                     <input type="email" name="Email" placeholder="Email" id="email-register">
                 </div>
-                
+
                 <div class="form-field">
-                    <div><p>Senha:</p></div>
+                    <div>
+                        <p>Senha:</p>
+                    </div>
                     <input type="password" name="Password" placeholder="Senha" id="password-register">
                 </div>
 
                 <div class="form-field">
-                    <div><p>Confirmar Senha:</p></div>
-                    <input type="password" name="ConfirmPassword" placeholder="Confirmar Senha" id="confirm-password-register">
+                    <div>
+                        <p>Confirmar Senha:</p>
+                    </div>
+                    <input type="password" name="ConfirmPassword" placeholder="Confirmar Senha"
+                        id="confirm-password-register">
                 </div>
 
                 <input type="button" class="btn-solid" value="Cadastrar">
@@ -173,8 +196,58 @@
         </div>
     </main>
 
+    <div class="telaEscura">
+        <div id="nav-celular">
+            <div class="header">
+                <h2>Menu</h2>
+                <div id="botaoVoltar" class="icon">
+                    <i class="fi fi-tr-x"></i>
+                </div>
+            </div>
+            <div class="rolagem-menu">
+                <nav class="menu-categorias">
+                    <h2>Categorias</h2>
+                    <nav class="menu-categorias-item">
+                        <a href="">favoritos</a>
+                    </nav>
+                    <nav class="menu-categorias-item">
+                        <a href="">celulares</a>
+                    </nav>
+                    <nav class="menu-categorias-item">
+                        <a href="">computadores</a>
+                    </nav>
+                    <nav class="menu-categorias-item">
+                        <a href="">controle</a>
+                    </nav>
+                    <nav class="menu-categorias-item">
+                        <a href="">jogos</a>
+                    </nav>
+                    <nav class="menu-categorias-item">
+                        <a href="">memoria RAM</a>
+                    </nav>
+                    <nav class="menu-categorias-item">
+                        <a href="">mouse</a>
+                    </nav>
+                    <nav class="menu-categorias-item">
+                        <a href="">notebook</a>
+                    </nav>
+                    <nav class="menu-categorias-item">
+                        <a href="">placa de video</a>
+                    </nav>
+                    <nav class="menu-categorias-item">
+                        <a href="">processador</a>
+                    </nav>
+                    <nav class="menu-categorias-item">
+                        <a href="">teclado</a>
+                    </nav>
+                </nav>
+            </div>
+        </div>
+    </div>
+
     <script src="/src/funçoes/login.js"></script>
     <script src="/src/funçoes/carrosel.js"></script>
+    <script src="/src/funçoes/menuCelular.js"></script>
 </body>
 
 </html>
