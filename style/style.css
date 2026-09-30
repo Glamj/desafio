@@ -50,6 +50,8 @@
 
     .menu ul {
         display: flex;
+        align-items: center;
+        justify-content: center;
         margin: 5% 8%;
         list-style: none;
     }
@@ -197,8 +199,12 @@
     4. BOTÕES E ÁREA DE LOGIN
    ========================================================================== */
     .btn-default {
+        font-size: 1.1rem;
         background: var(--corSecundaria);
+        color: #fff;
+        border: none;
         border-radius: 10px;
+        padding: 17px 20px;
     }
 
     .btn-default:hover {

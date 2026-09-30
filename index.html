@@ -11,6 +11,7 @@
         href="https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
     <link rel="stylesheet" href="/style/var.css">
     <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/produtos.css">
     <link rel="stylesheet" href="/style/loginstyle.css">
     <link rel="stylesheet" href="/style/responsavidade.css">
     <link rel="stylesheet" href="/style/menucelular.css">
@@ -51,7 +52,7 @@
                         <i class="fi fi-tr-heart"></i>
                     </div>
                     <div title="Carrinho" class="icon">
-                        <i class="fi fi-tr-cart-minus"></i>
+                        <i id="carrinho" class="fi fi-tr-cart-minus"></i>
                     </div>
                 </div>
             </div>
@@ -81,7 +82,7 @@
                     </div>
                 </li>
                 <li>
-                    <a class="btn-default" href="">mais vendidos</a>
+                    <button class="btn-default" href="">adicionar produtos</button>
                 </li>
             </ul>
         </div>
@@ -139,7 +140,13 @@
             </div>
 
             <button id="next-button"><i class="fi fi-sr-angle-right"></i></button>
+
+
         </section>
+
+        <section class="Produtos" id="vitrine-produtos">
+        </section>
+
 
         <div id="overlayAccount" class="overlay invisible">
             <div class="overlayHeader">
@@ -248,6 +255,8 @@
     <script src="/src/funçoes/login.js"></script>
     <script src="/src/funçoes/carrosel.js"></script>
     <script src="/src/funçoes/menuCelular.js"></script>
+    <script src="/src/produtos/produtos.js"></script>
+    <script src="/src/produtos/carinho.js"></script>
 </body>
 
 </html>

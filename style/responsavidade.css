@@ -1,7 +1,7 @@
 @media (max-width: 750px) {
     
     .container-imgs img{
-        flex: 0 0 calc((100% - (var(--gapSlider) * 2)) / 3);
+        flex: 0 0 calc((100% - (var(--gapSlider) * 2)) /3);
     }
 
     .header-Top-end, .menu{
