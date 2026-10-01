@@ -9,8 +9,8 @@
 .card {
     border-radius: 12px;
     width: 220px;
-    background-color: #242424;
-    border: 1px solid #333333;
+    background-color: #161a26;
+    border: 1px solid #262c3f;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -20,15 +20,15 @@
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: #04ba04;
-    box-shadow: 0 8px 16px rgba(4, 186, 4, 0.15);
+    border-color: #3261da;
+    box-shadow: 0 8px 16px rgba(50, 97, 218, 0.25);
     cursor: pointer;
 }
 
 .cardImg {
     width: 100%;
     height: 180px;
-    background-color: #1a1a1a;
+    background-color: #0f121a;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,19 +54,19 @@
 }
 
 .PrecoVermelho {
-    color: #ba0404;
+    color: #e5484d;
     font-size: 12px;
     margin: 4px 12px;
 }
 
 .PrecoDes {
     text-decoration: line-through;
-    color: #ba0404;
+    color: #e5484d;
 }
 
 .Preco {
     font-size: 18px;
     font-weight: 700;
-    color: #04ba04;
+    color: #5d85ec;
     margin: 2px 12px 12px 12px;
 }

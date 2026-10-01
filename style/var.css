@@ -2,4 +2,11 @@
     --corPrincipal: #000;
     --corSecundaria: #3261da;
     --gapSlider: 30px;
+
+    /* Paleta de apoio (referência) */
+    --corAzulClaro: #5d85ec;
+    --corSuperficie: #161a26;
+    --corBorda: #262c3f;
+    --corTextoSecundario: #c4cadb;
+    --corAlerta: #e5484d;
 }

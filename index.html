@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="/style/var.css">
     <link rel="stylesheet" href="/style/style.css">
     <link rel="stylesheet" href="/style/produtos.css">
-    <link rel="stylesheet" href="/style/loginstyle.css">
     <link rel="stylesheet" href="/style/responsavidade.css">
     <link rel="stylesheet" href="/style/menucelular.css">
     <link rel="stylesheet" href="reset.css">
@@ -68,7 +67,7 @@
                 <li class="dropDown">
                     <a class="dropDown-categorias" href="">Categorias</a>
                     <div class="dropDown-menu">
-                        <a href="">favoritos</a>
+                        <a href="">todos</a>
                         <a href="">celulares</a>
                         <a href="">computados</a>
                         <a href="">controle</a>
@@ -97,11 +96,11 @@
             <button id="previous-button"><i class="fi fi-sr-angle-left"></i></button>
 
             <div class="slider-wrapper" id="slider-wrapper">
-                <div class="container-imgs">
-                    <img src="/src/iconsCategorias/favoritos.png" alt="Favoritos">
-                    <h2>favoritos</h2>
+                <div class="container-imgs" id="all">
+                    <img src="/src/iconsCategorias/favoritos.png" alt="Todos">
+                    <h2>Todos</h2>
                 </div>
-                <div class="container-imgs">
+                <div class="container-imgs" id="smartphones">
                     <img src="/src/iconsCategorias/celular.png" alt="Celular">
                     <h2>celular</h2>
                 </div>
@@ -121,7 +120,7 @@
                     <img src="/src/iconsCategorias/mouse.png" alt="Mouse">
                     <h2>mouse</h2>
                 </div>
-                <div class="container-imgs">
+                <div class="container-imgs" id="laptops">
                     <img src="/src/iconsCategorias/notebook.png" alt="Notebook">
                     <h2>notebook</h2>
                 </div>
@@ -201,57 +200,78 @@
                 <input type="button" class="btn-outline" value="Login" onclick="goToLogin()">
             </form>
         </div>
-    </main>
 
-    <div class="telaEscura">
-        <div id="nav-celular">
-            <div class="header">
-                <h2>Menu</h2>
-                <div id="botaoVoltar" class="icon">
-                    <i class="fi fi-tr-x"></i>
+        <div class="telaEscura">
+            <div id="nav-celular">
+                <div class="header">
+                    <h2>Menu</h2>
+                    <div id="botaoVoltar" class="icon">
+                        <i class="fi fi-tr-x"></i>
+                    </div>
+                </div>
+                <div class="rolagem-menu">
+                    <nav class="menu-categorias">
+                        <h2>Categorias</h2>
+                        <nav class="menu-categorias-item">
+                            <a href="">favoritos</a>
+                        </nav>
+                        <nav class="menu-categorias-item">
+                            <a href="">celulares</a>
+                        </nav>
+                        <nav class="menu-categorias-item">
+                            <a href="">computadores</a>
+                        </nav>
+                        <nav class="menu-categorias-item">
+                            <a href="">controle</a>
+                        </nav>
+                        <nav class="menu-categorias-item">
+                            <a href="">jogos</a>
+                        </nav>
+                        <nav class="menu-categorias-item">
+                            <a href="">memoria RAM</a>
+                        </nav>
+                        <nav class="menu-categorias-item">
+                            <a href="">mouse</a>
+                        </nav>
+                        <nav class="menu-categorias-item">
+                            <a href="">notebook</a>
+                        </nav>
+                        <nav class="menu-categorias-item">
+                            <a href="">placa de video</a>
+                        </nav>
+                        <nav class="menu-categorias-item">
+                            <a href="">processador</a>
+                        </nav>
+                        <nav class="menu-categorias-item">
+                            <a href="">teclado</a>
+                        </nav>
+                    </nav>
                 </div>
             </div>
-            <div class="rolagem-menu">
-                <nav class="menu-categorias">
-                    <h2>Categorias</h2>
-                    <nav class="menu-categorias-item">
-                        <a href="">favoritos</a>
-                    </nav>
-                    <nav class="menu-categorias-item">
-                        <a href="">celulares</a>
-                    </nav>
-                    <nav class="menu-categorias-item">
-                        <a href="">computadores</a>
-                    </nav>
-                    <nav class="menu-categorias-item">
-                        <a href="">controle</a>
-                    </nav>
-                    <nav class="menu-categorias-item">
-                        <a href="">jogos</a>
-                    </nav>
-                    <nav class="menu-categorias-item">
-                        <a href="">memoria RAM</a>
-                    </nav>
-                    <nav class="menu-categorias-item">
-                        <a href="">mouse</a>
-                    </nav>
-                    <nav class="menu-categorias-item">
-                        <a href="">notebook</a>
-                    </nav>
-                    <nav class="menu-categorias-item">
-                        <a href="">placa de video</a>
-                    </nav>
-                    <nav class="menu-categorias-item">
-                        <a href="">processador</a>
-                    </nav>
-                    <nav class="menu-categorias-item">
-                        <a href="">teclado</a>
-                    </nav>
-                </nav>
-            </div>
         </div>
-    </div>
 
+    </main>
+
+    <footer>
+        <div>
+            <h3>Vyron</h3>
+            <p>&copy; 2026 Vyron E-commerce. Todos os direitos reservados.</p>
+        </div>
+        <div>
+            <h4>Links Úteis</h4>
+            <ul>
+                <li><a href="">Sobre Nós</a></li>
+                <li><a href="">Política de Privacidade</a></li>
+                <li><a href="">Termos de Uso</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contato</h4>
+            <p>Email: suporte@vyron.com</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
     <script src="/src/funçoes/login.js"></script>
     <script src="/src/funçoes/carrosel.js"></script>
     <script src="/src/funçoes/menuCelular.js"></script>
