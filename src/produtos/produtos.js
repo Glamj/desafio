@@ -1,5 +1,5 @@
 
-let listaProdutos = null; 
+let listaProdutos = null;
 
 async function carregarProdutosMaisRecentes() {
     try {
@@ -7,11 +7,11 @@ async function carregarProdutosMaisRecentes() {
         const marcasFamosas = ['apple', 'samsung', 'asus', 'lenovo', 'dell', 'hp', 'xiaomi', 'sony', 'acer', 'huawei'];
         const limiteBusca = 30;
 
-        const promessas = categoriasTech.map(cat => 
+        const promessas = categoriasTech.map(cat =>
             fetch(`https://dummyjson.com/products/category/${cat}?limit=${limiteBusca}&sortBy=id&order=desc`)
                 .then(res => res.json())
         );
-        
+
         const resultados = await Promise.all(promessas);
         let produtosFiltrados = [];
 
@@ -46,7 +46,7 @@ async function carregarProdutosMaisRecentes() {
                 preçoNormal: item.price,
                 preçoDesconto: Number((item.price * (1 - item.discountPercentage / 100)).toFixed(2)),
                 desconto: Math.round(item.discountPercentage),
-                categoria: item.category 
+                categoria: item.category
             };
         });
 
@@ -60,15 +60,15 @@ async function carregarProdutosMaisRecentes() {
 
 document.addEventListener('click', (event) => {
     const containerClicado = event.target.closest('.container-imgs');
-    
+
     if (containerClicado && listaProdutos) {
         const idCategoria = containerClicado.id;
-        
-        
+
+
         if (idCategoria === 'all') {
             gerarVitrineAutomatica(listaProdutos, null);
         } else if (idCategoria) {
-        
+
             gerarVitrineAutomatica(listaProdutos, idCategoria);
         }
     }
@@ -84,15 +84,15 @@ function gerarVitrineAutomatica(listaDeProdutos, classFilter = null) {
 
     vitrine.innerHTML = '';
 
-    listaDeProdutos.forEach(produto => {
-        
+    listaDeProdutos.forEach((produto, index ) => {
+
         if (classFilter == null || produto.categoria === classFilter) {
             const precoNormalFormatado = produto.preçoNormal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             const precoDescontoFormatado = produto.preçoDesconto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
             const card = document.createElement('div');
             card.classList.add('card');
-            
+
             card.innerHTML = `
                 <div class="cardImg">
                     <img src="${produto.img}" alt="${produto.nome}" width="250px">
@@ -100,6 +100,7 @@ function gerarVitrineAutomatica(listaDeProdutos, classFilter = null) {
                 <h3 class="Nome-Produtos">${produto.nome}</h3>
                 <p class="PrecoVermelho">de <span class="PrecoDes">${precoNormalFormatado}</span> por</p>
                 <h5 class="Preco">${precoDescontoFormatado}</h5>
+                <button onclick="adicionarAoCarrinho(${index})">Comprar</button>
             `;
 
             vitrine.appendChild(card);

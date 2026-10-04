@@ -65,6 +65,10 @@
         width: 30%;
     }
 
+    .logoCelular{
+        display: none;
+    }
+
     .logo img {
         height: 100%;
     }

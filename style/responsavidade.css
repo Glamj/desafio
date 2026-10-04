@@ -1,5 +1,11 @@
 @media (max-width: 750px) {
     
+    .logo{
+        width: 20%;
+    }
+    .logoCelular{
+        display: flex;
+    }
     .container-imgs img{
         flex: 0 0 calc((100% - (var(--gapSlider) * 2)) /3);
     }
